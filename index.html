@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian's Sticker App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Message -->
+    <div class="mobile-message" id="mobileMessage">
+        <div class="mobile-content">
+            <h2>Julian's Sticker App</h2>
+            <p>Not yet available on mobile devices.</p>
+            <p>Please use a desktop or laptop computer for the best experience.</p>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            
+            <div class="sidebar-content">
+                <div class="upload-section">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <h3>Drop your sticker images here</h3>
+                            <p>or click to browse</p>
+                            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-section">
+                        <label>Aspect Ratio</label>
+                        <div class="ratio-toggle">
+                            <button id="ratio32Btn" class="ratio-btn active">3:2</button>
+                            <button id="ratio1610Btn" class="ratio-btn">16:10</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-section">
+                        <label for="sizeSlider">Sticker Size <span id="sizeValue">150px</span></label>
+                        <input type="range" id="sizeSlider" min="40" max="500" value="150" class="slider">
+                    </div>
+                    
+                    <div class="control-section">
+                        <div class="logo-header">
+                            <label>Logo</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="logoToggle" class="toggle-input">
+                                <label for="logoToggle" class="toggle-label"></label>
+                            </div>
+                        </div>
+                        <div class="logo-size-control">
+                            <label for="logoSizeSlider">Size <span id="logoSizeValue">40px</span></label>
+                            <input type="range" id="logoSizeSlider" min="20" max="100" value="40" class="slider">
+                        </div>
+                    </div>
+                    
+                    <div class="control-section">
+                        <label>Layout</label>
+                        <div class="button-controls">
+                            <button id="backBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                    <path d="M19 12H5"></path>
+                                    <path d="M12 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button id="randomizeBtn" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                    <path d="M16.466 7.5C15.643 4.237 13.952 3 12 3c-1.98 0-3.5 1.5-3.5 3.5s1.5 3.5 3.5 3.5c1.5 0 2.5-.5 3-1.5"></path>
+                                    <path d="M7.534 16.5C8.357 19.763 10.048 21 12 21c1.98 0 3.5-1.5 3.5-3.5s-1.5-3.5-3.5-3.5c-1.5 0-2.5.5-3 1.5"></path>
+                                </svg>
+                                Randomize
+                            </button>
+                            <button id="clearBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Canvas Area -->
+        <div class="main-area">
+            <div class="canvas-container">
+                <div class="canvas-wrapper">
+                    <canvas id="stickerCanvas" width="900" height="600"></canvas>
+                                    <div class="canvas-overlay">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
